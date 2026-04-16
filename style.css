@@ -218,6 +218,26 @@ ul { list-style: none; }
 .layout-two-col .col-image.circle { width: 350px; height: 350px; }
 
 /* === HERO (page1) === */
+/* Magic Button - Gieo quẻ */
+.magic-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; background: linear-gradient(135deg, #d4a862, #8b5e3c);
+    color: #FAFAF5; border-radius: 50px; font-weight: 700; font-size: 1rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(212, 168, 98, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative; overflow: hidden;
+}
+.magic-btn::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg); transition: 0.5s;
+}
+.magic-btn:hover {
+    transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 30px rgba(212, 168, 98, 0.6);
+}
+.magic-btn:hover::before { left: 200%; }
+
 .hero-subtitle {
     font-family: var(--font-heading); font-size: 1.1rem;
     letter-spacing: 0.45em; color: var(--text-light); margin-bottom: 20px; font-weight: 500;
